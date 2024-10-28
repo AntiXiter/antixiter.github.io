@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Moderno</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="hero">
+        <div class="nav-container">
+            <h1>Widson - Desenvolvedor Web</h1>
+            <nav>
+                <a href="#sobre">Sobre Mim</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#jogo-da-velha">Jogo da Velha</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+        <p>Transformando ideias em código eficiente e funcional. 🌐</p>
+    </header>
+
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <div class="about-container">
+            <img src="assets/pessoa.jpg" alt="Foto do Widson" class="profile-photo">
+            <div class="about-text">
+                <p>Sou desenvolvedor web apaixonado por tecnologia e inovação. Tenho experiência em HTML, CSS, JavaScript e frameworks modernos como React e Flask.</p>
+                <p>Adoro aprender, compartilhar conhecimento e colaborar em projetos que impactam positivamente o mundo digital.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+        <div class="projetos-container">
+            <div class="projeto">
+                <h3>Website Pessoal</h3>
+                <p>Portfólio moderno, responsivo e dinâmico para destacar habilidades e projetos.</p>
+            </div>
+            <div class="projeto">
+                <h3>CRM Completo</h3>
+                <p>Plataforma robusta para gerenciamento de vendas, contatos e automação de tarefas.</p>
+            </div>
+            <div class="projeto">
+                <h3>Aplicativo Mobile</h3>
+                <p>App para melhorar a produtividade pessoal e profissional.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="jogo-da-velha">
+        <h2>Jogo da Velha</h2>
+        <p>Desafie a máquina! Você é o "X" e a máquina é o "O".</p>
+        <div class="board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <button onclick="resetGame()">Reiniciar Jogo</button>
+        <p id="status"></p>
+    </section>
+
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form action="https://formspree.io/f/xknkyper" method="POST">
+            <input type="text" name="name" placeholder="Seu Nome" required>
+            <input type="email" name="_replyto" placeholder="Seu E-mail" required>
+            <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Widson | Desenvolvedor Web</p>
+    </footer>
+</body>
+</html>
