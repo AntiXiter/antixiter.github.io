@@ -1,134 +1,266 @@
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    background-color: #000; /* Fundo preto */
+    color: white; /* Texto branco */
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-image: url('assets/fundo.jpg'); /* Atualizado para a imagem local */
+.sidebar {
+    width: 250px;
+    background-color: #111; /* Preto mais escuro */
+    color: white;
+    height: 100vh;
+    position: fixed;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image {
+    margin-top: 70px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 3px solid #6c757d; /* Borda vermelha */
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #111; /* Preto mais escuro */
+    color: white;
+    height: 100vh;
+    position: fixed; /* Mantém a sidebar fixa na tela */
+    left: 0;
+    top: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000; /* Garante que a sidebar fique sobre os outros elementos */
+    /*box-shadow: 0 0 5px #ff0000; /* Brilho vermelho ao redor da sidebar */
+}
+
+
+.sidebar ul {
+    margin-top: 160px;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: #ffff; /* Vermelho mais suave */
+    text-decoration: none;
+    font-size: 28px;
+    transition: color 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+    color: #ff0000; /* Vermelho forte ao passar o mouse */
+}
+
+.main-content {
+    margin-left: 250px; /* Empurra o conteúdo para não ficar atrás da sidebar */
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.section {
+    height: 100vh;
+    padding: 20px;
+    border-bottom: 1px solid #222; /* Cinza escuro para suavizar transição */
+}
+
+.inicio-section {
+    position: relative;
+    background-image: url('assets/code-background.jpg');
     background-size: cover;
     background-position: center;
-    color: #FFFFFF;
-}
-
-header.hero {
+    color: white;
     text-align: center;
-    padding: 80px 20px;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #FF0000; /* Vermelho */
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-top: 5px;
-}
-
-.nav-container nav {
-    background: rgba(0, 4, 2, 0.3); /* Transparência na barra de navegação */
-    padding: 10px;
-    border-radius: 5px; /* Borda arredondada */
-    display: inline-block; /* Para que a barra de navegação não ocupe toda a largura */
-}
-
-.nav-container nav a {
-    color: #FFFFFF; /* Branco */
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: transform 0.3s;
-}
-
-.nav-container nav a:hover {
-    text-decoration: underline;
-    transform: scale(1.1);
-    color: #FF0000; /* Vermelho */
-}
-
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.about-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin-top: 20px;
+    overflow: hidden;
 }
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 1px solid blue; /* Vermelho */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
+/* Pseudo-elemento para o overlay escuro */
+.inicio-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Deixa mais escuro */
+    z-index: 1;
 }
 
-.profile-photo:hover {
-    transform: scale(1.1);
+.inicio-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    color: #ff4444; /* Vermelho mais suave */
 }
 
-.about-text {
-    max-width: 500px;
-    text-align: left;
+.inicio-section p {
+    font-size: 4.5rem;
+    padding: 0px 2px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 10px #ff0000; /* Brilho vermelho sutil */
 }
 
-.projetos-container {
+.sobre-section {
+    background-color: #141414; /* Tom de preto mais escuro */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.sobre-titulo h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ff4040; /* Vermelho suave para o título */
+}
+
+.sobre-titulo p {
+    font-size: 1.5rem;
+    color: #ddd; /* Tom de cinza mais claro */
+}
+
+.sobre-conteudo {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.sobre-texto {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+    margin-left: 180px;
+}
+
+.sobre-texto h2 {
+    font-size: 2.9rem;
+    margin-bottom: 20px;
+    color: #ffffff; /* Vermelho mais suave para o subtítulo */
+}
+
+.sobre-texto p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #f5f5f5; /* Branco suave para maior destaque no texto */
+}
+
+.text-destaque {
+    color: #ff4040; /* Vermelho mais intenso para destaques */
+}
+
+.sobre-info {
+    flex: 1;
+    max-width: 400px;
+    text-align: left;
+    background-color: #222; /* Fundo mais suave para o painel de informações */
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 180px;
+}
+
+.sobre-info p{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #f5f5f5; /* Letras brancas para maior contraste */
+}
+
+.sobre-info ul {
+    list-style-type: none;
+    padding: 10;
+    margin-top: 50px;
+}
+
+.sobre-info li {
+    margin: 10px 0;
+    font-size: 1.3rem;
+    color: #f5f5f5; /* Letras brancas para maior contraste */
+}
+
+.sobre-info a {
+    color: #ff5c5c; /* Vermelho suave para links */
+    text-decoration: none;
+
+}
+
+.sobre-info .btn-contato {
+    background-color: #ff5c5c; /* Vermelho suave para o botão */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 40px;
+    display: inline-block;
+    margin-left: 90px;
+}
+
+.sobre-info .btn-contato:hover {
+    background-color: #e60000; /* Vermelho mais forte no hover */
+}
+
+.sobre-estatisticas {
+    margin: 120px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
-.projeto {
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo com transparência */
+.stat-box {
+    background-color: #333; /* Tom de cinza escuro para o box */
+    color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    width: 300px;
-    transition: transform 0.3s;
-}
-
-.projeto:hover {
-    transform: scale(1.05);
-}
-
-.board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 10px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.cell {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo com transparência */
-    border: 2px solid #FFFFFF; /* Branco */
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.cell:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
-}
-
-footer {
-    background-color: #000000; /* Preto */
-    color: #FFFFFF; /* Branco */
-    padding: 10px;
+    border-radius: 10px;
     text-align: center;
+    flex: 1;
+    min-width: 100px;
+}
+
+.stat-box h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ff6666; /* Vermelho suave para os números */
+}
+
+.stat-box p {
+    font-size: 1.1rem;
+    color: #ccc; /* Cinza suave para a descrição */
 }
