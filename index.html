@@ -3,84 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio Moderno</title>
+    <title>Portfólio de Programador</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="hero">
-        <div class="nav-container">
-            <h1>Widson - Desenvolvedor Web</h1>
-            <nav>
-                <a href="#sobre">Sobre Mim</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#jogo-da-velha">Jogo da Velha</a>
-                <a href="#contato">Contato</a>
-            </nav>
+    <div class="sidebar">
+        <div class="profile-image">
+            <img src="assets/widson.png" alt="Sua Foto">
         </div>
-        <p>Transformando ideias em código eficiente e funcional. 🌐</p>
-    </header>
+        <p class="profile-name">Widson Araujo</p>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre Mim</a></li>
+            <li><a href="#servicos">O que Eu Faço</a></li>
+            <li><a href="#resumo">Resumo</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
 
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <div class="about-container">
-            <img src="assets/pessoa.jpg" alt="Foto do Widson" class="profile-photo">
-            <div class="about-text">
-                <p>Sou desenvolvedor web apaixonado por tecnologia e inovação. Tenho experiência em HTML, CSS, JavaScript e frameworks modernos como React e Flask.</p>
-                <p>Adoro aprender, compartilhar conhecimento e colaborar em projetos que impactam positivamente o mundo digital.</p>
+    <div class="main-content">
+        <section id="inicio" class="section inicio-section">
+            <h1>Bem-vindo</h1>
+            <p><span id="animated-text"></span></p>
+        </section>
+        <section id="sobre" class="section sobre-section">
+            <!-- Título da Seção -->
+            <div class="sobre-titulo">
+                <h1>Sobre Mim</h1>
+                <p>Um pouco sobre quem eu sou</p>
             </div>
-        </div>
-    </section>
-
-    <section id="projetos">
-        <h2>Meus Projetos</h2>
-        <div class="projetos-container">
-            <div class="projeto">
-                <h3>Website Pessoal</h3>
-                <p>Portfólio moderno, responsivo e dinâmico para destacar habilidades e projetos.</p>
+        
+            <div class="sobre-conteudo">
+                <!-- Informações Pessoais -->
+                <div class="sobre-texto">
+                    <h2>Eu sou <span class="text-destaque">Widson Araujo</span>, Programador Backend</h2>
+                    <p>
+                        Sou estudante de Ciência da Computação com foco em <strong>Python</strong> e <strong>banco de dados</strong>.
+                        Tenho experiência em desenvolvimento de sistemas robustos e soluções eficientes. Atualmente, estou
+                        desenvolvendo um <strong>app de produtividade em Python</strong> e aprimorando minhas habilidades
+                        no <strong>desenvolvimento web</strong>.
+                    </p>
+                    <p>
+                        Meu objetivo é construir soluções práticas, modernas e escaláveis, aplicando sempre as melhores práticas
+                        de programação.
+                    </p>
+                </div>
+        
+                <!-- Informações Pessoais e Contato -->
+                <div class="sobre-info">
+                    <p class="contact">Entre em Contato</p>
+                    <ul>
+                        <li><strong>Nome:</strong> Widson Araujo</li>
+                        <li><strong>Email:</strong> <a href="mailto:widsonrodrigues3@gmail.com" class="text-destaque">widsonrodrigues3@gmail.com</a></li>
+                        <li><strong>Idade:</strong> 18 anos</li>
+                        <li><strong>Cidade:</strong> Itapevi-SP</li>
+                    </ul>
+        
+                    <!-- Botão de Contato -->
+                    <a href="" target="_blank" class="btn-contato">
+                        Fale comigo no WhatsApp
+                    </a>
+                </div>
             </div>
-            <div class="projeto">
-                <h3>CRM Completo</h3>
-                <p>Plataforma robusta para gerenciamento de vendas, contatos e automação de tarefas.</p>
+        
+            <!-- Estatísticas (Experiência, Projetos, etc.) -->
+            <div class="sobre-estatisticas">
+                <div class="stat-box">
+                    <h3>2+</h3>
+                    <p>Anos de Experiência</p>
+                </div>
+                <div class="stat-box">
+                    <h3>5+</h3>
+                    <p>Projetos Realizados</p>
+                </div>
+                <div class="stat-box">
+                    <h3>10+</h3>
+                    <p>Tecnologias Aprendidas</p>
+                </div>
+                <div class="stat-box">
+                    <h3>3</h3>
+                    <p>Empresas Colaboradas</p>
+                </div>
             </div>
-            <div class="projeto">
-                <h3>Aplicativo Mobile</h3>
-                <p>App para melhorar a produtividade pessoal e profissional.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+        <section id="servicos" class="section">
+            <h1>O que Eu Faço</h1>
+            <p>Descrição dos serviços que ofereço.</p>
+        </section>
+        <section id="resumo" class="section">
+            <h1>Resumo</h1>
+            <p>Um resumo da minha carreira e habilidades.</p>
+        </section>
+        <section id="projetos" class="section">
+            <h1>Projetos</h1>
+            <p>Alguns dos meus projetos.</p>
+        </section>
+        <section id="contato" class="section">
+            <h1>Contato</h1>
+            <p>Informações de contato.</p>
+        </section>
+    </div>
 
-    <section id="jogo-da-velha">
-        <h2>Jogo da Velha</h2>
-        <p>Desafie a máquina! Você é o "X" e a máquina é o "O".</p>
-        <div class="board" id="board">
-            <div class="cell" data-index="0"></div>
-            <div class="cell" data-index="1"></div>
-            <div class="cell" data-index="2"></div>
-            <div class="cell" data-index="3"></div>
-            <div class="cell" data-index="4"></div>
-            <div class="cell" data-index="5"></div>
-            <div class="cell" data-index="6"></div>
-            <div class="cell" data-index="7"></div>
-            <div class="cell" data-index="8"></div>
-        </div>
-        <button onclick="resetGame()">Reiniciar Jogo</button>
-        <p id="status"></p>
-    </section>
-
-    <section id="contato">
-        <h2>Entre em Contato</h2>
-        <form action="https://formspree.io/f/xknkyper" method="POST">
-            <input type="text" name="name" placeholder="Seu Nome" required>
-            <input type="email" name="_replyto" placeholder="Seu E-mail" required>
-            <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Widson | Desenvolvedor Web</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
