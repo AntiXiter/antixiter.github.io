@@ -1,62 +1,62 @@
-const board = Array(9).fill(null);
-let currentPlayer = 'X';
-const statusDisplay = document.getElementById('status');
-const cells = document.querySelectorAll('.cell');
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll(".section");
+    const navLinks = document.querySelectorAll(".sidebar ul li a");
 
-cells.forEach(cell => {
-    cell.addEventListener('click', () => makeMove(cell));
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(current)) {
+                link.classList.add("active");
+            }
+        });
+    });
+
+    // Smooth scrolling
+    navLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: "smooth"
+            });
+        });
+    });
 });
 
-function makeMove(cell) {
-    const index = cell.getAttribute('data-index');
+document.addEventListener("DOMContentLoaded", function () {
+    const textElement = document.getElementById("animated-text");
+    const text = "Desenvolvedor de Softwares e Soluções";
+    let index = 0;
+    let isDeleting = false;
 
-    if (board[index] || checkWinner()) return;
+    function typeEffect() {
+        if (isDeleting) {
+            textElement.innerText = text.substring(0, index--);
+        } else {
+            textElement.innerText = text.substring(0, index++);
+        }
 
-    board[index] = currentPlayer;
-    cell.textContent = currentPlayer;
-
-    if (checkWinner()) {
-        statusDisplay.textContent = `${currentPlayer} venceu!`;
-    } else if (board.every(cell => cell)) {
-        statusDisplay.textContent = 'Empate!';
-    } else {
-        currentPlayer = 'O';
-        aiMove();
+        if (index > text.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 1000); // Tempo antes de apagar
+        } else if (index < 0) {
+            isDeleting = false;
+            setTimeout(typeEffect, 500); // Tempo antes de recomeçar
+        } else {
+            setTimeout(typeEffect, isDeleting ? 50 : 100); // Velocidade da digitação
+        }
     }
-}
 
-function aiMove() {
-    const availableMoves = board.map((val, idx) => (val ? null : idx)).filter(v => v !== null);
-    const randomMove = availableMoves[Math.floor(Math.random() * availableMoves.length)];
-
-    board[randomMove] = 'O';
-    cells[randomMove].textContent = 'O';
-
-    if (checkWinner()) {
-        statusDisplay.textContent = 'O venceu!';
-    } else {
-        currentPlayer = 'X';
-    }
-}
-
-function checkWinner() {
-    const winningCombinations = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],
-        [0, 3, 6], [1, 4, 7], [2, 5, 8],
-        [0, 4, 8], [2, 4, 6],
-    ];
-
-    return winningCombinations.some(combination => {
-        const [a, b, c] = combination;
-        return board[a] && board[a] === board[b] && board[a] === board[c];
-    });
-}
-
-function resetGame() {
-    board.fill(null);
-    cells.forEach(cell => {
-        cell.textContent = '';
-    });
-    statusDisplay.textContent = '';
-    currentPlayer = 'X';
-}
+    typeEffect();
+});
