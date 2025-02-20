@@ -264,3 +264,168 @@ body {
     font-size: 1.1rem;
     color: #ccc; /* Cinza suave para a descrição */
 }
+
+/* Estilos responsivos para telas de 430x932 */
+@media (max-width: 430px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Sidebar vira um menu no topo */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background-color: #111; /* Cor do menu */
+    }
+
+    .profile-image {
+        width: 90px;
+        height: 90px;
+        border: 2px solid #6c757d;
+        margin-bottom: 10px;
+    }
+
+    .profile-name {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .sidebar ul {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        margin: 5px 0;
+    }
+
+    .sidebar ul li a {
+        font-size: 16px;
+    }
+
+    /* Conteúdo principal ocupa toda a largura */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+
+    }
+
+    /* Seções ocupam 100% da largura */
+    .section {
+        width: 100%;
+        height: 400px;
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    /* Ajusta a seção de início */
+    .inicio-section {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .inicio-section h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .inicio-section p {
+        font-size: 2.2rem;
+        text-shadow: 1px 1px 5px #ff0000;
+    }
+
+    /* Seção Sobre */
+    .sobre-section {
+        width: 382px;
+        height: 2015px;
+
+    }
+
+    .sobre-titulo h1 {
+        font-size: 2rem;
+    }
+
+    .sobre-titulo p {
+        font-size: 1.2rem;
+    }
+
+    /* Ajuste de layout da seção sobre */
+    .sobre-conteudo {
+        margin-top: 00px;
+        width: 381px;
+
+    }
+
+    .sobre-texto {
+        max-width: 350px; /* Garante que o texto não fique muito largo */
+        width: 90%; /* Faz com que o tamanho se ajuste automaticamente */
+        text-align: center; /* Centraliza o conteúdo do texto */
+        margin: 0 auto; /* Centraliza horizontalmente */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre-texto h2 {
+        font-size: 1rem;
+
+
+    }
+
+    .sobre-texto p {
+        font-size: 12px;
+        
+    }
+
+    .sobre-info {
+        max-width: 350px; /* Garante que o texto não fique muito largo */
+        width: 90%; /* Faz com que o tamanho se ajuste automaticamente */
+
+        margin: 0 auto; /* Centraliza horizontalmente */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre-info .btn-contato {
+
+        margin-top: 10px;
+        display: inline-block;
+        margin-left: 0px;
+    }
+
+    /* Estatísticas ajustadas */
+    .sobre-estatisticas {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+
+    }
+
+    .stat-box {
+        width: 100%;
+
+    }
+
+    .stat-box h3 {
+        font-size: 2rem;
+    }
+
+    .stat-box p {
+        font-size: 1rem;
+    }
+}
